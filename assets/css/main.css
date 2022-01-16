@@ -130,7 +130,10 @@ sub {
 }
 
 img {
-	border: 0
+	border: 0;
+	max-height: auto;
+	max-width: auto;
+	
 }
 
 svg:not(:root) {
@@ -506,14 +509,18 @@ body {
 	-ms-flex-align: center;
 	align-items: center;
 	text-decoration: none;
-	color: #fff
+	color: #fff;
+	max-width: 10%;
+	max-height: 1px;
+	background: no-repeat;
 }
 
 .header--logo p {
 	margin: 0 0 0 10px;
 	font-size: 16px;
 	font-weight: 700;
-	text-transform: uppercase
+	text-transform: uppercase;
+	color: dodgerblue
 }
 
 .header--nav-toggle {
@@ -714,7 +721,8 @@ body {
 
 .intro--banner {
 	position: relative;
-	height: 475px
+	top:10px;
+	height: 500px
 }
 
 .intro--banner::before {
@@ -784,8 +792,11 @@ body {
 
 .intro--banner img {
 	position: absolute;
-	bottom: 21px;
-	right: -12px
+	bottom: 0px;
+	top:-1px;
+	max-width: 50%;
+	height: auto;
+	right: -110px
 }
 
 .intro--options {
@@ -1207,7 +1218,11 @@ body {
 .about--banner img {
 	position: absolute;
 	bottom: -90px;
-	right: -12px
+	left: 360px;
+	top: -10px;
+	max-height: 100%;
+	max-width: 100%;
+	align-items: auto;
 }
 
 .about--options {

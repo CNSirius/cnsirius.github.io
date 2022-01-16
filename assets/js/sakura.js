@@ -14,14 +14,14 @@ Sakura.prototype.draw = function(cxt) {
 	var xc = 40 * this.s / 4;
 	cxt.translate(this.x, this.y);
 	cxt.rotate(this.r);
-	cxt.drawImage(img, 0, 0, 40 * this.s, 40 * this.s)
+	cxt.drawImage(img, 0, 0, 30 * this.s, 30 * this.s)
 	cxt.restore();
 }
 Sakura.prototype.update = function() {
 	this.x = this.fn.x(this.x, this.y);
 	this.y = this.fn.y(this.y, this.y);
 	this.r = this.fn.r(this.r);
-	if(this.x > window.innerWidth +10 || this.x < 0 || this.y > window.innerHeight || this.y < 0) {
+	if(this.x > window.innerWidth  || this.x < 0 || this.y > window.innerHeight || this.y < 0) {
 		this.r = getRandom('fnr');//宽窄
 		if(Math.random() > 0.01) {
 			this.x = getRandom('x');
@@ -63,7 +63,7 @@ function getRandom(option) {
 	var ret, random, abcdefg;
 	switch(option) {
 		case 'x':
-			abcdefg = window.innerWidth +10;
+			abcdefg = window.innerWidth +20;
 			ret = Math.random() * abcdefg;
 			break;
 		case 'y':
@@ -76,13 +76,13 @@ function getRandom(option) {
 			ret = Math.random() * 6;
 			break;
 		case 'fnx':
-			random = -0.5 + Math.random() * 1;
+			random = -1.8 + Math.random() * 2;
 			ret = function(x, y) {
 				return x - 0.5 * random - 0.6;//俩方向偏离度  左右方向速度
 			};
 			break;
 		case 'fny':
-			random = 0.6 + Math.random() * 1;//速度  下坠
+			random = 0.6 + Math.random() * 0.3;//速度  下坠
 			ret = function(x, y) {
 				
 				return y + random;
